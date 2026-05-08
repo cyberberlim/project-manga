@@ -259,6 +259,94 @@
   .why-item h4 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
   .why-item p { font-size: 14px; color: var(--mid); line-height: 1.6; }
 
+  /* ── CONSULTOR ── */
+  .consultant {
+    background: var(--orange);
+  }
+  .consultant-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+  .consultant .section-tag { color: rgba(255,255,255,0.7); }
+  .consultant .section-title { color: var(--white); }
+  .consultant-name {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.6); margin-top: 8px;
+  }
+  .credentials { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }
+  .credential-badge {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);
+    padding: 12px 20px; border-radius: 100px;
+    font-size: 13px; font-weight: 600; color: var(--white);
+    backdrop-filter: blur(6px);
+  }
+  .credential-badge::before {
+    content: '✓'; width: 22px; height: 22px; min-width: 22px;
+    background: var(--white); color: var(--orange);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 800;
+  }
+  .consultant-card {
+    background: var(--white); border-radius: 24px; padding: 40px;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .consultant-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--orange), var(--orange-light));
+  }
+  .consultant-avatar {
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top center;
+    border: 5px solid var(--orange);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    margin: 0 auto 20px; display: block;
+  }
+  .consultant-card h3 { font-size: 22px; font-weight: 800; color: var(--dark); }
+  .consultant-card .role { font-size: 14px; color: var(--mid); margin-top: 4px; }
+  .consultant-card blockquote {
+    font-family: 'Lora', serif; font-style: italic;
+    font-size: 16px; line-height: 1.65; color: var(--mid);
+    margin-top: 24px; padding-top: 24px;
+    border-top: 1px solid rgba(0,0,0,0.07);
+  }
+
+  /* ── CREDITO PROGRAMADO ── */
+  .credito-programado { background: var(--white); }
+  .cp-explainer {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+    margin-top: 56px; align-items: start;
+  }
+  .cp-main {
+    background: var(--orange); border-radius: 24px; padding: 48px 40px;
+    color: var(--white);
+  }
+  .cp-main h3 {
+    font-size: 28px; font-weight: 800; line-height: 1.2; margin-bottom: 20px;
+  }
+  .cp-main h3 em { font-style: italic; font-family: 'Lora', serif; }
+  .cp-main p { font-size: 16px; line-height: 1.75; opacity: 0.9; }
+  .cp-tag {
+    display: inline-block; background: rgba(255,255,255,0.2);
+    padding: 8px 16px; border-radius: 100px;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.05em;
+    margin-bottom: 20px;
+  }
+  .cp-benefits { display: flex; flex-direction: column; gap: 16px; }
+  .cp-benefit {
+    background: var(--light); border-radius: 16px; padding: 24px;
+    border-left: 4px solid var(--orange);
+  }
+  .cp-benefit h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; color: var(--orange); }
+  .cp-benefit p { font-size: 14px; color: var(--mid); line-height: 1.6; }
+
+  @media (max-width: 768px) {
+    .consultant-inner { grid-template-columns: 1fr; gap: 40px; }
+    .cp-explainer { grid-template-columns: 1fr; }
+  }
+
   /* ── CTA FINAL ── */
   .cta-section {
     background: var(--dark); color: var(--white); text-align: center;
@@ -318,9 +406,9 @@
   <div class="logo">manga<span>•</span></div>
   <div class="nav-links">
     <a href="#sobre">Quem somos</a>
-    <a href="#servicos">Soluções</a>
-    <a href="#como">Como funciona</a>
-    <a href="#contato" class="nav-cta">Falar com a Manga</a>
+    <a href="#credito">Crédito Programado</a>
+    <a href="#consultor">Especialista</a>
+    <a href="#contato" class="nav-cta">Pegue sua Manga</a>
   </div>
 </nav>
 
@@ -395,7 +483,42 @@
   </div>
 </section>
 
-<!-- COMO FUNCIONA -->
+<!-- CRÉDITO PROGRAMADO -->
+<section class="credito-programado" id="credito">
+  <div class="container">
+    <p class="section-tag reveal">O produto estrela</p>
+    <h2 class="section-title reveal">O que é <em>crédito programado?</em></h2>
+    <div class="cp-explainer">
+      <div class="cp-main reveal reveal-delay-1">
+        <span class="cp-tag">#DinheiroInteligente</span>
+        <h3>Uma forma inteligente de planejar sua compra <em>sem pagar juros.</em></h3>
+        <p>O crédito programado, também chamado de consórcio, funciona de forma cooperativa. Um grupo de pessoas contribui mensalmente, formando um fundo comum — força coletiva para conquistar bens.</p>
+        <br>
+        <p>Esse fundo permite a contemplação dos participantes ao longo do tempo, viabilizando a compra de bens ou serviços com <strong>organização, planejamento e economia.</strong></p>
+      </div>
+      <div class="cp-benefits reveal reveal-delay-2">
+        <div class="cp-benefit">
+          <h4>🚫 Sem juros</h4>
+          <p>Diferente do financiamento, no consórcio você não paga juros — apenas uma taxa de administração.</p>
+        </div>
+        <div class="cp-benefit">
+          <h4>💰 Parcelas que cabem no orçamento</h4>
+          <p>Planeje com parcelas que fazem sentido para a sua realidade financeira hoje.</p>
+        </div>
+        <div class="cp-benefit">
+          <h4>🏠 Para imóveis e muito mais</h4>
+          <p>Use o crédito para comprar imóvel, veículo, reformar ou investir no seu negócio.</p>
+        </div>
+        <div class="cp-benefit">
+          <h4>📈 Planejar hoje é conquistar amanhã</h4>
+          <p>A forma mais inteligente de transformar disciplina financeira em patrimônio real.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <section class="how" id="como">
   <div class="container">
     <p class="section-tag reveal">Simples assim</p>
@@ -403,97 +526,3 @@
     <div class="steps">
       <div class="step reveal reveal-delay-1">
         <div class="step-num">1</div>
-        <h3>Converse com a gente</h3>
-        <p>Conta seu objetivo — comprar um imóvel, organizar o crédito ou investir.</p>
-      </div>
-      <div class="step reveal reveal-delay-2">
-        <div class="step-num">2</div>
-        <h3>Analisamos seu perfil</h3>
-        <p>Mapeamos a melhor solução de crédito para o seu momento.</p>
-      </div>
-      <div class="step reveal reveal-delay-3">
-        <div class="step-num">3</div>
-        <h3>Proposta sob medida</h3>
-        <p>Receba uma proposta clara, sem surpresas, feita para você.</p>
-      </div>
-      <div class="step reveal reveal-delay-4">
-        <div class="step-num">4</div>
-        <h3>Conquiste!</h3>
-        <p>Planos viram realidade com crédito consciente e acessível.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- POR QUE MANGA -->
-<section>
-  <div class="container">
-    <p class="section-tag reveal">Por que escolher</p>
-    <h2 class="section-title reveal">O que faz a Manga <em>diferente</em></h2>
-    <div class="why-grid">
-      <div class="why-item reveal reveal-delay-1">
-        <div class="why-check">✓</div>
-        <div>
-          <h4>100% digital e sem burocracia</h4>
-          <p>Processo simples do início ao fim. Sem filas, sem papelada desnecessária.</p>
-        </div>
-      </div>
-      <div class="why-item reveal reveal-delay-2">
-        <div class="why-check">✓</div>
-        <div>
-          <h4>Crédito consciente</h4>
-          <p>Trabalhamos para que o crédito seja uma ferramenta de conquista, não de endividamento.</p>
-        </div>
-      </div>
-      <div class="why-item reveal reveal-delay-3">
-        <div class="why-check">✓</div>
-        <div>
-          <h4>Atendimento humano</h4>
-          <p>Pessoas reais que entendem sua situação e se comprometem com o seu objetivo.</p>
-        </div>
-      </div>
-      <div class="why-item reveal reveal-delay-4">
-        <div class="why-check">✓</div>
-        <div>
-          <h4>Soluções integradas</h4>
-          <p>Crédito programado + mercado imobiliário em um único lugar, sem complicação.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA FINAL -->
-<section class="cta-section" id="contato">
-  <div class="container">
-    <p class="section-tag" style="color: var(--orange-light);">Novo ano, novas metas</p>
-    <h2 class="section-title reveal">Pronto para transformar<br>planos em <em>conquistas?</em></h2>
-    <p class="reveal">Fale com a Manga hoje. É simples, rápido e sem compromisso.</p>
-    <a href="https://wa.me" class="btn-primary reveal">Falar com a Manga agora →</a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="logo">manga<span style="display:inline-block;width:7px;height:7px;background:var(--orange);border-radius:50%;margin-left:2px;vertical-align:super;font-size:0;">•</span></div>
-  <p>Crédito simples, humano e acessível. © 2026 Manga. Todos os direitos reservados.</p>
-</footer>
-
-<script>
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.12 });
-  reveals.forEach(el => observer.observe(el));
-
-  // Smooth scroll nav
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
-    });
-  });
-</script>
-</body>
-</html>
