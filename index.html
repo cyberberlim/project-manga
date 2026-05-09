@@ -22,7 +22,7 @@
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Sora', system-ui, -apple-system, sans-serif;
     background: var(--light);
     color: var(--dark);
     overflow-x: hidden;
@@ -36,7 +36,7 @@
     background: rgba(250,247,244,0.85);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(245,124,31,0.1);
-    animation: fadeDown 0.8s ease both;
+    animation: fadeDown 0.8s ease forwards;
   }
   .logo {
     font-size: 28px; font-weight: 800; letter-spacing: -1px;
@@ -89,7 +89,7 @@
     font-size: 13px; font-weight: 600; color: var(--orange);
     letter-spacing: 0.05em; text-transform: uppercase;
     margin-bottom: 28px; position: relative; z-index: 1;
-    animation: fadeUp 0.9s 0.2s ease both;
+    animation: fadeUp 0.9s 0.2s ease forwards;
   }
   .hero-badge::before {
     content: ''; width: 6px; height: 6px; border-radius: 50%;
@@ -99,7 +99,7 @@
     font-size: clamp(42px, 7vw, 88px);
     font-weight: 800; line-height: 1.05; letter-spacing: -2px;
     position: relative; z-index: 1;
-    animation: fadeUp 0.9s 0.35s ease both;
+    animation: fadeUp 0.9s 0.35s ease forwards;
   }
   .hero h1 em {
     font-style: italic; font-family: 'Lora', serif;
@@ -110,13 +110,13 @@
     color: var(--mid); max-width: 520px; line-height: 1.65;
     margin: 24px auto 0;
     position: relative; z-index: 1;
-    animation: fadeUp 0.9s 0.5s ease both;
+    animation: fadeUp 0.9s 0.5s ease forwards;
   }
   .hero-ctas {
     display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
     margin-top: 44px;
     position: relative; z-index: 1;
-    animation: fadeUp 0.9s 0.65s ease both;
+    animation: fadeUp 0.9s 0.65s ease forwards;
   }
   .btn-primary {
     background: var(--orange); color: var(--white);
@@ -143,7 +143,7 @@
     margin-top: 80px; padding-top: 48px;
     border-top: 1px solid rgba(90,74,58,0.12);
     position: relative; z-index: 1;
-    animation: fadeUp 0.9s 0.8s ease both;
+    animation: fadeUp 0.9s 0.8s ease forwards;
     width: 100%; max-width: 700px;
   }
   .num-item { text-align: center; }
@@ -378,9 +378,10 @@
   }
 
   .reveal {
-    opacity: 0; transform: translateY(32px);
+    opacity: 1; transform: translateY(0);
     transition: opacity 0.8s ease, transform 0.8s ease;
   }
+  .reveal.hidden { opacity: 0; transform: translateY(32px); }
   .reveal.visible { opacity: 1; transform: translateY(0); }
   .reveal-delay-1 { transition-delay: 0.1s; }
   .reveal-delay-2 { transition-delay: 0.2s; }
@@ -523,6 +524,3 @@
   <div class="container">
     <p class="section-tag reveal">Simples assim</p>
     <h2 class="section-title reveal">Como a Manga <em>funciona</em></h2>
-    <div class="steps">
-      <div class="step reveal reveal-delay-1">
-        <div class="step-num">1</div>
