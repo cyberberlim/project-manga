@@ -524,3 +524,131 @@
   <div class="container">
     <p class="section-tag reveal">Simples assim</p>
     <h2 class="section-title reveal">Como a Manga <em>funciona</em></h2>
+    <div class="steps">
+      <div class="step reveal reveal-delay-1">
+        <div class="step-num">1</div>
+        <h3>Converse com a gente</h3>
+        <p>Conta seu objetivo — comprar um imóvel, organizar o crédito ou investir.</p>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-num">2</div>
+        <h3>Analisamos seu perfil</h3>
+        <p>Mapeamos a melhor solução de crédito para o seu momento.</p>
+      </div>
+      <div class="step reveal reveal-delay-3">
+        <div class="step-num">3</div>
+        <h3>Proposta sob medida</h3>
+        <p>Receba uma proposta clara, sem surpresas, feita para você.</p>
+      </div>
+      <div class="step reveal reveal-delay-4">
+        <div class="step-num">4</div>
+        <h3>Conquiste!</h3>
+        <p>Planos viram realidade com crédito consciente e acessível.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUE MANGA -->
+<section>
+  <div class="container">
+    <p class="section-tag reveal">Por que escolher</p>
+    <h2 class="section-title reveal">O que faz a Manga <em>diferente</em></h2>
+    <div class="why-grid">
+      <div class="why-item reveal reveal-delay-1">
+        <div class="why-check">✓</div>
+        <div>
+          <h4>100% digital e sem burocracia</h4>
+          <p>Processo simples do início ao fim. Sem filas, sem papelada desnecessária.</p>
+        </div>
+      </div>
+      <div class="why-item reveal reveal-delay-2">
+        <div class="why-check">✓</div>
+        <div>
+          <h4>Crédito consciente</h4>
+          <p>Trabalhamos para que o crédito seja uma ferramenta de conquista, não de endividamento.</p>
+        </div>
+      </div>
+      <div class="why-item reveal reveal-delay-3">
+        <div class="why-check">✓</div>
+        <div>
+          <h4>Atendimento humano</h4>
+          <p>Pessoas reais que entendem sua situação e se comprometem com o seu objetivo.</p>
+        </div>
+      </div>
+      <div class="why-item reveal reveal-delay-4">
+        <div class="why-check">✓</div>
+        <div>
+          <h4>Soluções integradas</h4>
+          <p>Crédito programado + mercado imobiliário em um único lugar, sem complicação.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSULTOR -->
+<section class="consultant" id="consultor">
+  <div class="container">
+    <div class="consultant-inner">
+      <div class="reveal">
+        <p class="section-tag">Quem está com você</p>
+        <h2 class="section-title">Especialista que<br><em>entende</em> o seu momento</h2>
+        <p class="consultant-name">Lailson Nascimento — Sócio Manga</p>
+        <div class="credentials">
+          <div class="credential-badge">Bacharel em Ciências Contábeis</div>
+          <div class="credential-badge">Esp. em Planejamento Financeiro</div>
+          <div class="credential-badge">Certificação CPA — Produtos Financeiros</div>
+          <div class="credential-badge">Sócio do Grupo Manga</div>
+        </div>
+      </div>
+      <div class="consultant-card reveal reveal-delay-2">
+        <img class="consultant-avatar" src="lailson.png" alt="Lailson Nascimento">
+        <h3>Lailson Nascimento</h3>
+        <p class="role">Especialista em Crédito & Planejamento Financeiro</p>
+        <blockquote>"Planejar hoje é a forma mais inteligente de conquistar amanhã. Estou aqui para te ajudar a tomar as melhores decisões com o seu dinheiro."</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section" id="contato">
+  <div class="container">
+    <p class="section-tag" style="color: var(--orange-light);">#PegueSuaManga</p>
+    <h2 class="section-title reveal">Pronto para transformar<br>planos em <em>conquistas?</em></h2>
+    <p class="reveal">Fale com o Lailson hoje. É simples, rápido e sem compromisso.</p>
+    <a href="https://wa.me" class="btn-primary reveal">Falar com a Manga agora →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">manga<span style="display:inline-block;width:7px;height:7px;background:var(--orange);border-radius:50%;margin-left:2px;vertical-align:super;font-size:0;">•</span></div>
+  <p>Crédito simples, humano e acessível. © 2026 Manga. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+  // Scroll reveal - add hidden first so fallback is visible
+  const reveals = document.querySelectorAll('.reveal');
+  reveals.forEach(el => el.classList.add('hidden'));
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.remove('hidden');
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.05 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Smooth scroll nav
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+</body>
+</html>
